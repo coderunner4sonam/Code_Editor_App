@@ -10,14 +10,14 @@ const Sidebar = () => {
 }
 
 const SidebarStyle = {
-  width:"30%",
+  width:"25%",
   height:"100%",
   border:"1px solid black"
 }
 
 const OptionStyle = {
-  width:"30%",
-  height:"20%",
+  width:"100%",
+  height:"10%",
   border:"1px solid red"
 }
 

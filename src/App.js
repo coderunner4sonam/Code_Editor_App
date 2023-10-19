@@ -4,11 +4,12 @@ import MainBody from './component/MainBody';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header/>
       <MainBody/>
     </div>
   );
 }
+
 
 export default App;
