@@ -28,7 +28,7 @@ const data = [
 const Explorer = () => {
   // State to store the explorer data
   const [explorerData, setExplorerData] = useState(data);
-
+  console.log(explorerData);  
   return (
     <div>
       {/* Map through the explorer data and render Folder components for each entry */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import usetraverseData from '../hooks/usetraverseData';
+import {usetraverseData} from '../hooks/usetraverseData';
 
 // Folder component to display a hierarchical folder structure
 function Folder({ explorer, explorerData , setExplorerData}) {
@@ -8,8 +8,8 @@ function Folder({ explorer, explorerData , setExplorerData}) {
   const [expand, setExpand] = useState(false);
   const [createItemsFolder, setCreateItemsFolder] = useState(false);
   const [createItemsFile, setCreateItemsFile] = useState(false);
-  const {insert} = usetraverseData();
-
+  const insert = usetraverseData();
+  console.log(insert)
   // Function to handle folder creation button click
   function handleFolder(e) {
     e.stopPropagation();
@@ -27,7 +27,7 @@ function Folder({ explorer, explorerData , setExplorerData}) {
 
     e.stopPropagation();
     if(e.keyCode === 13 && e.target.value){
-      setExplorerData(insert(explorerData, e.target.value, true, explorer.id));
+      setExplorerData(insert(explorer, e.target.value, true, explorer.id));
     }
   }
 

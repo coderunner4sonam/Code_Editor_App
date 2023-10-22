@@ -49,7 +49,7 @@ const SidebarStyle = {
 };
 
 const OptionStyle = {
-  width: "94%",
+  width: "93.5%",
   height: "10%",
   background: "#007BFF", // Blue background color
   color: "white", // White text color
