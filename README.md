@@ -1,19 +1,8 @@
-
 ![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/fe3fafdc-a928-44ab-903d-98741fde5622)
 
 # Folder Structure
-src/
-|-- components/
-|   |-- Header.js
-|   |-- MainBody.js
-|   |-- Sidebar.js
-|   |   |-- Explorer.js
-|   |-- Container.js
-|   |   |-- NavBar.js
-|   |   |-- FileNavbar.js
-|   |   |-- CodeEditor.js
-|   |       |-- MonacoEditor.js
-|-- App.js
+![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/cea77a6c-4b5c-4bf6-bb36-ec58102dee78)
+
 
 # CodeEditor
 
