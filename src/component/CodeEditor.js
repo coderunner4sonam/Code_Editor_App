@@ -27,26 +27,28 @@ const CodeEditor = ({ selectlang, locked }) => {
 // Styles for the CodeEditor component
 const CodeEditorStyle = {
   position: "relative", // Position the component relative to its container
-  width: "100.2%", // Set the width of the editor
+  width: "99%", // Set the width of the editor
   height: "86.3%", // Set the height of the editor
   backgoundColor: "black", // Define the background color (note the typo, should be "backgroundColor")
 };
 
 // Styles for the "Locked" overlay
 const LockedStyle = {
-  position: "absolute", // Position the overlay absolutely within its parent
-  top: "0", // Place it at the top
-  left: "0", // Place it at the left
-  width: "99%", // Set the width of the overlay
-  height: "99%", // Set the height of the overlay
-  color: "white", // Text color
-  backgoundColor: "transparent", // Background color (note the typo, should be "backgroundColor")
-  textAlign: "center", // Center text horizontally
-  border: "1px solid green", // Add a border
-  display: "flex", // Use flex display for content positioning
-  justifyContent: "center", // Center content horizontally
-  alignItems: "center", // Center content vertically
-  zIndex: 2, // Set the stacking order of the overlay
+  position: "absolute",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  color: "white",
+  backgroundColor: "rgba(0, 0, 0, 0.7)", // Add a semi-transparent black background
+  textAlign: "center",
+  border: "2px solid grey", // Change the border color to green
+  borderRadius: "5px", // Add rounded corners
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 2,
+  fontSize: "24px", // Increase font size
 };
 
 export default CodeEditor; // Export the CodeEditor component

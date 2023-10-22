@@ -39,16 +39,8 @@ const Container = () => {
 
 // Style for the Container component
 const ContainerStyle = {
-  width: "100%", // Set the width to 100% of the parent container
+  width: "80%", // Set the width to 100% of the parent container
   height: "100%", // Set the height to 100% of the parent container
-  border: "1px solid purple", // Add a border with a purple color
-};
-
-// Style for the NavBar component
-const NavBarStyle = {
-  width: "100%", // Set the width to 100% of the parent container
-  height: "10%", // Set the height to 10% of the parent container
-  border: "1px solid red", // Add a border with a red color
 };
 
 export default Container; // Export the Container component

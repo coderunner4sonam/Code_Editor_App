@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+import usetraverseData from '../hooks/usetraverseData';
 
 // Folder component to display a hierarchical folder structure
-function Folder({ explorer }) {
+function Folder({ explorer, explorerData , setExplorerData}) {
   // State variables to manage folder expansion and item creation
   const [expand, setExpand] = useState(false);
   const [createItemsFolder, setCreateItemsFolder] = useState(false);
   const [createItemsFile, setCreateItemsFile] = useState(false);
+  const {insert} = usetraverseData();
 
   // Function to handle folder creation button click
   function handleFolder(e) {
@@ -22,7 +24,11 @@ function Folder({ explorer }) {
 
   // Function to handle folder name input
   function handleFolderInput(e) {
+
     e.stopPropagation();
+    if(e.keyCode === 13 && e.target.value){
+      setExplorerData(insert(explorerData, e.target.value, true, explorer.id));
+    }
   }
 
   // Function to handle file name input
@@ -41,7 +47,7 @@ function Folder({ explorer }) {
 
   // Render a folder
   return (
-    <div style={{ paddingLeft: "25px", marginTop: "10px" }}>
+    <div style={{ paddingLeft: "10px", marginTop: "10px" }}>
       <div
         onClick={() => setExpand(!expand)}
         style={{ cursor: "pointer", display: "flex", gap: "40px" }}
@@ -62,13 +68,13 @@ function Folder({ explorer }) {
 
       {/* Render input field for folder creation if createItemsFolder is true */}
       {createItemsFolder && (
-        <div style={{ marginLeft: "25px", marginTop: "5px" }}>
-          <span>📁</span>
+        <div style={{paddingLeft: "5px",marginTop: "5px" }}>
+          📁
           <input
             type="text"
             autoFocus
             onBlur={(e) => handleFolder(e)}
-            onChange={handleFolderInput}
+            onKeyDown={handleFolderInput}
             placeholder="folder name"
           />
         </div>
@@ -76,13 +82,13 @@ function Folder({ explorer }) {
 
       {/* Render input field for file creation if createItemsFile is true */}
       {createItemsFile && (
-        <div style={{ marginLeft: "25px", marginTop: "5px" }}>
+        <div style={{paddingLeft: "5px",marginTop: "5px"}}>
           <span>🗄</span>
           <input
             type="text"
             autoFocus
             onBlur={(e) => handleFile(e)}
-            onChange={handleFileInput}
+            onKeyDown={handleFileInput}
             placeholder="file name"
           />
         </div>

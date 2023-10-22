@@ -1,18 +1,39 @@
 import React from 'react';
+import logo from "../utils/logo.jpg";
 
-// Header component to display a simple header
 const Header = () => {
   return (
     <div style={HeaderStyle}>
-      Header
+      <img src={logo} alt="Logo" style={logoStyle} />
+      <div style={textContainer}>
+        <h1 style={headerText}>CodeEditor</h1>
+      </div>
     </div>
   );
 }
 
-// Style for the Header component
 const HeaderStyle = {
-  height: "10vh", // Set the height to 10% of the viewport height
-  border: "1px solid black", // Add a border with a black color
+  height: "10vh",
+  border: "5px solid black",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "5px",
 };
 
-export default Header; // Export the Header component
+const logoStyle = {
+  height: "9vh",
+};
+
+const textContainer = {
+  textAlign: "center",
+  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+};
+
+const headerText = {
+  fontSize: "28px",
+  fontWeight: "bold",
+  color: "#007BFF", // Blue text color
+};
+
+export default Header;

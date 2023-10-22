@@ -19,15 +19,21 @@ const FileNavbar = () => {
 
 // Style for the parent container of the file names
 const FileNavbarParentStyle = {
+    width: "98.5%",
     display: "flex", // Display the file names in a flex container
-    justifyContent: "space-evenly", // Space evenly between elements
+    justifyContent: "flex-start", // Space evenly between elements
     alignItems: "center", // Center content vertically
     backgroundColor: "black", // Set the background color to black
-    padding: "2px", // Add padding
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", // Add a subtle shadow
 };
 
 // Style for individual file name elements
 const FileNavbarStyle = {
-    border: "0.5"
+    color:"white",
+    border:"0.5px solid grey",
+    width:"80px",
+    textAlign:"center",
+    borderRadius:"5px"
 }
+
+export default FileNavbar

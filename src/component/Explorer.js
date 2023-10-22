@@ -33,7 +33,12 @@ const Explorer = () => {
     <div>
       {/* Map through the explorer data and render Folder components for each entry */}
       {explorerData.map((exp, ind) => (
-        <Folder explorer={exp} key={exp.id} />
+        <Folder
+          explorer={exp}
+          key={exp.id}
+          explorerData={explorerData}
+          setExplorerData={setExplorerData}
+        />
       ))}
     </div>
   );
