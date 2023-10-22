@@ -1,42 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
-const NavBar = ({ languages, setSelectLang, codeToCopy, setCodeToCopy }) => {
+const NavBar = ({
+  languages,
+  setSelectLang,
+  codeToCopy,
+  setCodeToCopy,
+  setLocked
+}) => {
   const editorRef = useRef(null);
 
   function handleLanguage(e) {
     setSelectLang(e.target.value);
   }
 
-  // const handleCopyToClipboard = () => {
-  //   const Copy = editorRef.current?.getValue();
-  //   if (Copy) {
-  //     navigator.clipboard
-  //       .writeText(Copy)
-  //       .then(() => {
-  //         alert("Code copied to clipboard");
-  //         console.log("Copied code:", Copy);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Copy failed: ", error);
-  //       });
-  //   } else {
-  //     console.error("Code to copy is undefined");
-  //   }
-  // };
-
-  // const handleCopyToClipboard = () => {
-  //   if (editorRef.current) {
-  //     editorRef.current.setSelection(editorRef.current.getPosition(), editorRef.current.getPosition(9999));
-  //   }
-  // };
-  
   const handleCopyToClipboard = () => {
     if (editorRef.current) {
       const codeText = editorRef.current.getValue();
       console.log("Code Text:", codeText);
     }
   };
-  
+
   return (
     <div style={NavBarStyle}>
       {/* dropdown */}
@@ -51,8 +34,9 @@ const NavBar = ({ languages, setSelectLang, codeToCopy, setCodeToCopy }) => {
         <button onClick={handleCopyToClipboard}>Copy</button>
       </div>
       <div>
-        <button>Lock/unLock</button>
+        <button onClick={()=>setLocked(true)}>Lock/unLock</button>
       </div>
+
       <div>
         <button>Save</button>
       </div>
