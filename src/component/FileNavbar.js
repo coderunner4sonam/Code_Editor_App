@@ -11,6 +11,7 @@ const FileNavbar = () => {
             {navData.map((filename, ind) => (
                 <div key={ind} style={FileNavbarStyle}>
                     {filename}
+                    <button style={{color:"white", backgroundColor: "black",}}>x</button>
                 </div>
             ))}
         </div>
@@ -31,9 +32,12 @@ const FileNavbarParentStyle = {
 const FileNavbarStyle = {
     color:"white",
     border:"0.5px solid grey",
-    width:"80px",
+    width:"95px",
     textAlign:"center",
-    borderRadius:"5px"
+    borderRadius:"5px",
+    display: "flex", // Display the file names in a flex container
+    justifyContent: "space-evenly", // Space evenly between elements
+    alignItems: "center", 
 }
 
 export default FileNavbar
