@@ -1,10 +1,11 @@
 import React from 'react'
+import Explorer from './Explorer'
 
 const Sidebar = () => {
   return (
     <div style={SidebarStyle}>
       <div style={OptionStyle}>Explorer</div>
-      <div style={OptionStyle}>Folder</div>
+      <Explorer/>
     </div>
   )
 }

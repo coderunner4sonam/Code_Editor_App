@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 import CodeEditor from './CodeEditor'
 
 const Container = () => {
+  const [languages, setLanguages] = useState(["select a language","javascript","python","c++","c","java"]);
+  const [selectlang, setSelectLang] = useState("");
+  const [codeToCopy, setCodeToCopy] = useState("");
+
   return (
     <div style={ContainerStyle}>
-      <NavBar/>
-      <CodeEditor/>
+      <NavBar languages={languages} setSelectLang={setSelectLang} codeToCopy={codeToCopy} setCodeToCopy={setCodeToCopy}/>
+      <CodeEditor selectlang={selectlang} />
     </div>
   )
 }
+
 const ContainerStyle = {
     width:"100%",
     height:"100%",

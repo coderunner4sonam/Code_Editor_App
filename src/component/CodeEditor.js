@@ -1,40 +1,21 @@
-import React, { useState } from 'react'
+import  Editor  from '@monaco-editor/react';
+import { useRef } from 'react';
 
-const blue = ["function", "let", "var", "const", "for"];
-
-const CodeEditor = () => {
-  const [inputText, setInputText] = useState("");
-  const [input, setInput] = useState("");
-
-  function handleInput(e) {
-    const text = e.target.value;
-    const textContent = text.split(" ").map((ele)=>{
-      if(blue.includes(ele)){
-        return <span className="blueColor">{ele + " "}</span>
-      }
-      
-      return <span>{ele + " "}</span>
-    }) 
-    setInputText(textContent);
-  }
+const CodeEditor = ({selectlang}) => {
+  const editorRef = useRef(null);
  
-  
-  function handleEnter(e){
-    
-    const text = e.target.value;
-    if(e.key === "Enter"){
-
-      setInputText([...inputText, <br/>])
-    }
-  }
- 
-
-
   return (
     <div style={CodeEditorStyle}>
-      <div style={colorInputStyle}>{inputText}</div>
-      <textarea type='text'  onChange={handleInput} onKeyDown={handleEnter} placeholder='type code here' style={CodeEditorInputStyle} spellCheck="none"/>
-    
+      <Editor 
+        height="99%"
+        width="99.5%"
+        theme='vs-dark'
+        language={selectlang}
+        onMount={(editor) => {
+          editorRef.current = editor; // Store a reference to the editor instance
+        }}
+        />
+
     </div>
   )
 }
@@ -45,7 +26,6 @@ const CodeEditorStyle = {
   height:"89.2%",
   border:"1px solid green",
   backgoundColor:"black",
- 
 }
 
 const CodeEditorInputStyle = {
