@@ -1,30 +1,37 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 
+// Folder component to display a hierarchical folder structure
 function Folder({ explorer }) {
+  // State variables to manage folder expansion and item creation
   const [expand, setExpand] = useState(false);
   const [createItemsFolder, setCreateItemsFolder] = useState(false);
   const [createItemsFile, setCreateItemsFile] = useState(false);
 
-  function handleFolder(e){
+  // Function to handle folder creation button click
+  function handleFolder(e) {
     e.stopPropagation();
     setCreateItemsFolder(!createItemsFolder);
   }
 
+  // Function to handle file creation button click
   function handleFile(e) {
     e.stopPropagation();
-    setCreateItemsFile(!createItemsFile)
+    setCreateItemsFile(!createItemsFile);
   }
 
-  function handleFolderInput(e){
+  // Function to handle folder name input
+  function handleFolderInput(e) {
     e.stopPropagation();
   }
 
-  function handleFileInput(e){
+  // Function to handle file name input
+  function handleFileInput(e) {
     e.stopPropagation();
   }
 
-  if(!explorer.isFolder) {
+  // Render a file if the explorer is not a folder
+  if (!explorer.isFolder) {
     return (
       <div style={{ paddingLeft: "25px", marginTop: "10px" }}>
         🗄{explorer.name}
@@ -32,6 +39,7 @@ function Folder({ explorer }) {
     );
   }
 
+  // Render a folder
   return (
     <div style={{ paddingLeft: "25px", marginTop: "10px" }}>
       <div
@@ -52,6 +60,7 @@ function Folder({ explorer }) {
         </div>
       </div>
 
+      {/* Render input field for folder creation if createItemsFolder is true */}
       {createItemsFolder && (
         <div style={{ marginLeft: "25px", marginTop: "5px" }}>
           <span>📁</span>
@@ -64,6 +73,8 @@ function Folder({ explorer }) {
           />
         </div>
       )}
+
+      {/* Render input field for file creation if createItemsFile is true */}
       {createItemsFile && (
         <div style={{ marginLeft: "25px", marginTop: "5px" }}>
           <span>🗄</span>
@@ -76,9 +87,11 @@ function Folder({ explorer }) {
           />
         </div>
       )}
+
+      {/* Recursively expand and render child folders if 'expand' is true and 'explorer.items' exists */}
       {expand && explorer.items?.map((exp, ind) => <Folder explorer={exp} />)}
     </div>
   );
 }
 
-export default Folder;
+export default Folder; // Export the Folder component
