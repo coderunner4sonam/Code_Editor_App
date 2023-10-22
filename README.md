@@ -1,5 +1,6 @@
 
-![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/b2ddf04d-f410-4583-b89d-637de0f63a77)
+![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/fe3fafdc-a928-44ab-903d-98741fde5622)
+
 
 # CodeEditor
 
