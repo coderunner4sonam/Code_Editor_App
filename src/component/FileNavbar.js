@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // FileNavbar component to display a list of files
 const FileNavbar = () => {
     // State to store the list of file names
-    const [navData, setNavData] = useState(["index.js", "index.java"]);
+    const [navData, setNavData] = useState(["index.js", "index.java", "container.js"]);
  
     function handleDisplayFile(ind) {
         const remainData = [...navData];
