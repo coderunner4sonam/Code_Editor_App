@@ -18,6 +18,7 @@ const CodeEditor = ({ selectlang, locked }) => {
           editorRef.current = editor; // Store a reference to the editor instance
         }}
       />
+      
       {/* Conditionally render a "Locked" overlay if the 'locked' prop is true */}
       {locked && <div style={LockedStyle}> 🔑Locked </div>}
     </div>

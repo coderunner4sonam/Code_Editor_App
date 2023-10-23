@@ -4,6 +4,12 @@ import React, { useState } from 'react';
 const FileNavbar = () => {
     // State to store the list of file names
     const [navData, setNavData] = useState(["index.js", "index.java"]);
+ 
+    function handleDisplayFile(ind) {
+        const remainData = [...navData];
+        let RemainingNavData = navData.filter((ele,index)=> index!==ind);
+        setNavData(RemainingNavData);
+    }
 
     return (
         <div style={FileNavbarParentStyle}>
@@ -11,7 +17,7 @@ const FileNavbar = () => {
             {navData.map((filename, ind) => (
                 <div key={ind} style={FileNavbarStyle}>
                     {filename}
-                    <button style={{color:"white", backgroundColor: "black",}}>x</button>
+                    <button style={{color:"white", backgroundColor: "black"}} onClick={()=>handleDisplayFile(ind)}>x</button>   
                 </div>
             ))}
         </div>

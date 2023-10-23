@@ -1,10 +1,10 @@
-export function usetraverseData() {
-  return function insert(explorerData, name, isFolder, id) {
+function usetraverseData() {
+  function insert(explorerData, name, isFolder, id) {
     if (explorerData.id === id && name) {
       explorerData.items.unshift({
         id: new Date().getTime(),
         name: name,
-        isFolder: true,
+        isFolder,
         items: [],
       });
       return explorerData;
@@ -14,5 +14,8 @@ export function usetraverseData() {
     })
     return {...explorerData, items:newData}
   };
+  return {insert};
 }
+
+export default usetraverseData;
 

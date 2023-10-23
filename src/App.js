@@ -6,6 +6,7 @@ import Header from "./component/Header";
 import MainBody from './component/MainBody';
 
 function App() {
+  
   return (
     <div>
       {/* Rendering the Header component at the top of the app */}
@@ -13,6 +14,7 @@ function App() {
 
       {/* Rendering the MainBody component below the Header */}
       <MainBody />
+
     </div>
   );
 }

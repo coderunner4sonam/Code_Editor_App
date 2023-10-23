@@ -1,24 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 // NavBar component to display navigation options and actions
-const NavBar = ({
-  languages,
-  setSelectLang,
-  locked,
-  setLocked
-}) => {
+const NavBar = ({ languages, setSelectLang, locked, setLocked }) => {
   const editorRef = useRef(null);
 
   // Function to handle language selection
   function handleLanguage(e) {
     setSelectLang(e.target.value);
   }
-
-  // Function to copy code to the clipboard
+  
+  // // Function to copy code to the clipboard
+  // const handleCopyToClipboard = () => {
+  //   if (editorRef.current) {
+  //     const codeText = editorRef.current.getValue();
+  //     console.log("Code Text:", codeText);
+  //   }
+  // };
   const handleCopyToClipboard = () => {
+    console.log("copy");
     if (editorRef.current) {
-      const codeText = editorRef.current.getValue();
-      console.log("Code Text:", codeText);
+      document.execCommand('copy');
     }
   };
 
@@ -34,17 +35,20 @@ const NavBar = ({
       <div>
         <select style={selectStyle} onClick={handleLanguage}>
           {languages.map((lan, ind) => (
-            <option style={optionStyle} >{lan}</option>
+            <option style={optionStyle}>{lan}</option>
           ))}
         </select>
       </div>
       {/* Button to copy code to the clipboard */}
       <div>
         <button onClick={handleCopyToClipboard} style={buttonStyle}>Copy</button>
+       
       </div>
       {/* Button to toggle the lock state, and label changes based on the lock state */}
       <div>
-        <button onClick={handleLocked} style={buttonStyle}> {locked ? "Unlock" : "Lock" }</button>
+        <button onClick={handleLocked} style={buttonStyle}>
+          {locked ? "Unlock" : "Lock"}
+        </button>
       </div>
       {/* Button to save the code */}
       <div>
@@ -64,26 +68,25 @@ const NavBarStyle = {
 };
 
 const selectStyle = {
-  padding: '8px',
-  fontSize: '16px',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
+  padding: "8px",
+  fontSize: "16px",
+  border: "1px solid #ccc",
+  borderRadius: "4px",
 };
 
 const optionStyle = {
-  fontSize: '16px',
+  fontSize: "16px",
 };
 
-
 const buttonStyle = {
-  backgroundColor: '#007BFF',
-  color: '#fff',
-  border: 'none',
-  borderRadius: '4px',
-  padding: '10px 20px',
-  fontSize: '16px',
-  cursor: 'pointer',
-  transition: 'background-color 0.3s ease',
+  backgroundColor: "#007BFF",
+  color: "#fff",
+  border: "none",
+  borderRadius: "4px",
+  padding: "10px 20px",
+  fontSize: "16px",
+  cursor: "pointer",
+  transition: "background-color 0.3s ease",
 };
 
 export default NavBar; // Export the NavBar component

@@ -1,15 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
-import {usetraverseData} from '../hooks/usetraverseData';
+import React from "react";
+import { useState } from "react";
 
 // Folder component to display a hierarchical folder structure
-function Folder({ explorer, explorerData , setExplorerData}) {
+function Folder({ handleInsertItem, explorer }) {
   // State variables to manage folder expansion and item creation
   const [expand, setExpand] = useState(false);
   const [createItemsFolder, setCreateItemsFolder] = useState(false);
   const [createItemsFile, setCreateItemsFile] = useState(false);
-  const insert = usetraverseData();
-  console.log(insert)
+
   // Function to handle folder creation button click
   function handleFolder(e) {
     e.stopPropagation();
@@ -24,16 +22,22 @@ function Folder({ explorer, explorerData , setExplorerData}) {
 
   // Function to handle folder name input
   function handleFolderInput(e) {
-
     e.stopPropagation();
-    if(e.keyCode === 13 && e.target.value){
-      setExplorerData(insert(explorer, e.target.value, true, explorer.id));
+    if (e.keyCode === 13 && e.target.value) {
+      handleInsertItem(explorer.id, e.target.value, true);
+      setCreateItemsFolder(!createItemsFolder);
+      setExpand(true);
     }
   }
 
   // Function to handle file name input
   function handleFileInput(e) {
     e.stopPropagation();
+    if (e.keyCode === 13 && e.target.value) {
+      handleInsertItem(explorer.id, e.target.value, false);
+      setCreateItemsFolder(!createItemsFolder);
+      setExpand(true);
+    }
   }
 
   // Render a file if the explorer is not a folder
@@ -68,7 +72,7 @@ function Folder({ explorer, explorerData , setExplorerData}) {
 
       {/* Render input field for folder creation if createItemsFolder is true */}
       {createItemsFolder && (
-        <div style={{paddingLeft: "5px",marginTop: "5px" }}>
+        <div style={{ paddingLeft: "5px", marginTop: "5px" }}>
           📁
           <input
             type="text"
@@ -82,7 +86,7 @@ function Folder({ explorer, explorerData , setExplorerData}) {
 
       {/* Render input field for file creation if createItemsFile is true */}
       {createItemsFile && (
-        <div style={{paddingLeft: "5px",marginTop: "5px"}}>
+        <div style={{ paddingLeft: "5px", marginTop: "5px" }}>
           <span>🗄</span>
           <input
             type="text"
@@ -95,7 +99,14 @@ function Folder({ explorer, explorerData , setExplorerData}) {
       )}
 
       {/* Recursively expand and render child folders if 'expand' is true and 'explorer.items' exists */}
-      {expand && explorer.items?.map((exp, ind) => <Folder explorer={exp} />)}
+      {expand &&
+        explorer.items?.map((exp, ind) => (
+          <Folder
+            key={exp.id}
+            explorer={exp}
+            handleInsertItem={handleInsertItem}
+          />
+        ))}
     </div>
   );
 }
