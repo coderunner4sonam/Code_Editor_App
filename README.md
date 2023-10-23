@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/fe3fafdc-a928-44ab-903d-98741fde5622)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Folder Structure
+![image](https://github.com/coderunner4sonam/Code_Editor_App/assets/80218236/cea77a6c-4b5c-4bf6-bb36-ec58102dee78)
 
-## Available Scripts
 
-In the project directory, you can run:
+# CodeEditor
 
-### `npm start`
+**Live Demo**: [CodeEditor on Vercel](https://code-editor-app-pi.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![CodeEditor Screenshot](screenshot.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About
 
-### `npm test`
+**CodeEditor** is a web-based code editor that allows you to write, edit, and run code directly in your web browser. Whether you're a developer, a student, or just someone who wants to experiment with code, CodeEditor provides an accessible and user-friendly environment for writing and testing your code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project is hosted on Vercel and built using web technologies such as HTML, CSS, and JavaScript. It provides a simple yet effective code editor interface with syntax highlighting, code execution, and code saving capabilities. This is a perfect tool for quickly trying out code snippets, sharing code with others, or even as a learning platform for coding enthusiasts.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Syntax Highlighting**: CodeEditor highlights code syntax for various programming languages, making your code more readable.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Code Execution**: You can run your code and immediately see the results, which is great for testing and experimenting.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Code Saving**: Save your code snippets for future reference. You can even organize your saved code into folders.
 
-### `npm run eject`
+- **User-Friendly Interface**: The interface is designed to be user-friendly, allowing you to focus on your code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/your-username/CodeEditor.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Navigate to the project directory**:
 
-## Learn More
+   ```bash
+   cd CodeEditor
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Run a local development server**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm start
+   ```
 
-### Code Splitting
+4. **Open your browser and visit** `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. **Open the CodeEditor**: Upon visiting the web app, you'll see a code editor interface where you can start writing code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Write Code**: Begin writing or pasting your code in the editor.
 
-### Making a Progressive Web App
+3. **Run Code**: Click the "Run" button to execute your code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Save Code**: If you want to save your code for later, click the "Save" button and provide a name and optional description for your snippet.
 
-### Advanced Configuration
+5. **Load and Manage Saved Code**: Click the "Load" button to view your saved code snippets. You can also create folders to organize your code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. **Share Code**: You can share your code snippets with others by simply sharing the URL.
 
-### Deployment
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- HTML
+- CSS
+- JavaScript
+- React
+- Vercel (for hosting)
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you'd like to contribute to this project, please fork the repository, make your changes, and submit a pull request. We welcome contributions to improve and expand the functionality of CodeEditor.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thank you to the open-source community for providing tools and libraries that make projects like CodeEditor possible.
+
+---
+
+Feel free to customize this README to fit the specifics of your project. Add sections, modify content, and include any additional information that you think is relevant. A well-structured README is an essential part of open-source projects as it helps users and contributors understand the project's purpose and how to get started.
