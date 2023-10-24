@@ -1,5 +1,6 @@
 // Importing the CSS file to style the components
 import './App.css';
+import CodeEdittwo from './CodeEdittwo';
 
 // Importing the Header and MainBody components
 import Header from "./component/Header";
@@ -14,7 +15,7 @@ function App() {
 
       {/* Rendering the MainBody component below the Header */}
       <MainBody />
-
+      {/* <CodeEdittwo/> */}
     </div>
   );
 }

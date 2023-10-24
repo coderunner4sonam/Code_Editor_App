@@ -1,22 +1,23 @@
 import Editor from "@monaco-editor/react";
-import { useRef } from "react";
 
 // CodeEditor component that displays a code editor with optional "Locked" overlay
-const CodeEditor = ({ selectlang, locked }) => {
-  // Create a reference to the Monaco editor instance
-  const editorRef = useRef(null);
+const CodeEditor = ({ selectlang, locked, handleEditorDidMount }) => {
+  
+  // Configuration options for the Monaco Editor.
+  const editorOptions = {
+    selectOnLineNumbers: true, // Enable selecting entire lines by clicking line numbers.
+  };
 
   return (
     <div style={CodeEditorStyle}>
       {/* Render the Monaco editor */}
       <Editor
-        height="99%"
-        width="99.5%"
+        height="500px"
+        selectlang={selectlang}
+        defaultValue=""
         theme="vs-dark"
-        language={selectlang}
-        onMount={(editor) => {
-          editorRef.current = editor; // Store a reference to the editor instance
-        }}
+        onMount={handleEditorDidMount}
+        options={editorOptions}
       />
       
       {/* Conditionally render a "Locked" overlay if the 'locked' prop is true */}

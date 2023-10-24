@@ -1,27 +1,12 @@
 import React, { useRef } from "react";
 
 // NavBar component to display navigation options and actions
-const NavBar = ({ languages, setSelectLang, locked, setLocked }) => {
-  const editorRef = useRef(null);
-
+const NavBar = ({ languages, setSelectLang, locked, setLocked, handleCopyToClipboard }) => {
+ 
   // Function to handle language selection
   function handleLanguage(e) {
     setSelectLang(e.target.value);
   }
-  
-  // // Function to copy code to the clipboard
-  // const handleCopyToClipboard = () => {
-  //   if (editorRef.current) {
-  //     const codeText = editorRef.current.getValue();
-  //     console.log("Code Text:", codeText);
-  //   }
-  // };
-  const handleCopyToClipboard = () => {
-    console.log("copy");
-    if (editorRef.current) {
-      document.execCommand('copy');
-    }
-  };
 
   // Function to toggle the lock state
   function handleLocked() {
@@ -41,7 +26,7 @@ const NavBar = ({ languages, setSelectLang, locked, setLocked }) => {
       </div>
       {/* Button to copy code to the clipboard */}
       <div>
-        <button onClick={handleCopyToClipboard} style={buttonStyle}>Copy</button>
+        <button  style={buttonStyle} onClick={handleCopyToClipboard}>Copy</button>
        
       </div>
       {/* Button to toggle the lock state, and label changes based on the lock state */}
